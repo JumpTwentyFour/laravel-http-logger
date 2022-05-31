@@ -4,8 +4,10 @@ namespace JumpTwentyFour\LaravelHttpLogger\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use JumpTwentyFour\LaravelHttpLogger\Contracts\RequestLoggerContract;
 use JumpTwentyFour\LaravelHttpLogger\Contracts\ResponseLoggerContract;
+use Symfony\Component\HttpFoundation\Response;
 
 class HttpLogger
 {
@@ -28,7 +30,12 @@ class HttpLogger
         }
         $response = $next($request);
         if (config('http-logger.log_responses')) {
-            ($this->responseLogger)($request, $response, $this->channel);
+            if ($response instanceof Response) {
+                ($this->responseLogger)($request, $response, $this->channel);
+            } else {
+                $type = get_class($response);
+                Log::warning("Failed to log response, type {$type} is not supported");
+            }
         }
 
         return $response;
