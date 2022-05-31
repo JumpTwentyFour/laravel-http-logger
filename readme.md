@@ -4,7 +4,7 @@
 
 You can install the package via composer:
 
-`composer require spatie/laravel-http-logger`
+`composer require jumptwentyfour/laravel-http-logger`
 
 Optionally you can publish the config file with:
 
