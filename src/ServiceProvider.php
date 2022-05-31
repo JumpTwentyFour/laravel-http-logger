@@ -20,7 +20,7 @@ class ServiceProvider extends BaseServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(__DIR__.'/../config/http-logger.php', 'http-logger');
-        $this->app->bind(ResponseLoggerContract::class, config_path('http-logger.response_logger'));
-        $this->app->bind(RequestLoggerContract::class, config_path('http-logger.request_logger'));
+        $this->app->bind(ResponseLoggerContract::class, config('http-logger.response_logger'));
+        $this->app->bind(RequestLoggerContract::class, config('http-logger.request_logger'));
     }
 }
