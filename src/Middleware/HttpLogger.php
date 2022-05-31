@@ -24,11 +24,11 @@ class HttpLogger
     public function handle(Request $request, Closure $next)
     {
         if (config('http-logger.log_requests')) {
-            $this->requestLogger($request, $this->channel);
+            ($this->requestLogger)($request, $this->channel);
         }
         $response = $next($request);
         if (config('http-logger.log_responses')) {
-            $this->responseLogger($response, $this->channel);
+            ($this->responseLogger)($request, $response, $this->channel);
         }
 
         return $response;
