@@ -23,9 +23,11 @@ class ResponseLogger implements ResponseLoggerContract
     {
         $data = [
             'url' => $request->url(),
+            'method' => $request->method(),
             'status' => $response->status(),
-            'headers' => $response->headers,
+            'headers' => $response->headers->all(),
             'content' => $response->content(),
+            'user' => $request->getUser(),
         ];
 
         $data = $this->filter($data);
