@@ -5,9 +5,12 @@ namespace JumpTwentyFour\LaravelHttpLogger\Loggers;
 use Illuminate\Http\Request;
 use Illuminate\Log\LogManager;
 use JumpTwentyFour\LaravelHttpLogger\Contracts\RequestLoggerContract;
+use JumpTwentyFour\LaravelHttpLogger\Traits\FiltersData;
 
 class RequestLogger implements RequestLoggerContract
 {
+    use FiltersData;
+
     private LogManager $logManager;
 
     public function __construct(LogManager $logManager)
@@ -25,20 +28,8 @@ class RequestLogger implements RequestLoggerContract
             'user' => $request->getUser(),
         ];
         $data = $this->filter($data);
-        $this->logManager->debug(json_encode($data));
+        $this->logManager->debug('Request: ' . json_encode($data));
     }
 
-    public function filter(array $data): array
-    {
-        return array_map(function ($value, $key) {
-            if (in_array(strtolower($key), ['password', 'token', 'authorization'])) {
-                return '*********';
-            }
-            if (is_array($value)) {
-                return $this->filter($value);
-            }
 
-            return $value;
-        }, array_keys($data), array_values($data));
-    }
 }

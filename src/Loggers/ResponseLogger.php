@@ -6,9 +6,12 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Log\LogManager;
 use JumpTwentyFour\LaravelHttpLogger\Contracts\ResponseLoggerContract;
+use JumpTwentyFour\LaravelHttpLogger\Traits\FiltersData;
 
 class ResponseLogger implements ResponseLoggerContract
 {
+    use FiltersData;
+
     private LogManager $logManager;
 
     public function __construct(LogManager $logManager)
@@ -25,6 +28,8 @@ class ResponseLogger implements ResponseLoggerContract
             'content' => $response->content(),
         ];
 
-        $this->logManager->debug(json_encode($data));
+        $data = $this->filter($data);
+
+        $this->logManager->debug('Response: ' . json_encode($data));
     }
 }
