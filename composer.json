@@ -2,6 +2,7 @@
     "name": "jumptwentyfour/laravel-http-logger",
     "description": "A logger middleware for HTTP requests and responses",
     "type": "library",
+    "version": "0.1.0",
     "keywords": [
         "jumptwentyfour",
         "jump24",
