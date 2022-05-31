@@ -39,6 +39,6 @@ class RequestLogger implements RequestLoggerContract
             }
 
             return $value;
-        }, $data);
+        }, array_keys($data), array_values($data));
     }
 }
