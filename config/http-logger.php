@@ -7,7 +7,7 @@ return [
 
     'log_responses' => env('HTTP_LOG_RESPONSES', true),
 
-    'request_logger' => \Jumptwentyfour\LaravelHttpLogger\Loggers\RequestLogger::class,
+    'request_logger' => \JumpTwentyFour\LaravelHttpLogger\Loggers\RequestLogger::class,
 
-    'response_logger' => \Jumptwentyfour\LaravelHttpLogger\Loggers\ResponseLogger::class,
+    'response_logger' => \JumpTwentyFour\LaravelHttpLogger\Loggers\ResponseLogger::class,
 ];

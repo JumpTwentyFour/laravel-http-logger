@@ -1,10 +1,10 @@
 <?php
 
-namespace Jumptwentyfour\LaravelHttpLogger;
+namespace JumpTwentyFour\LaravelHttpLogger;
 
 use Illuminate\Support\ServiceProvider as BaseServiceProvider;
-use Jumptwentyfour\LaravelHttpLogger\Contracts\RequestLoggerContract;
-use Jumptwentyfour\LaravelHttpLogger\Contracts\ResponseLoggerContract;
+use JumpTwentyFour\LaravelHttpLogger\Contracts\RequestLoggerContract;
+use JumpTwentyFour\LaravelHttpLogger\Contracts\ResponseLoggerContract;
 
 class ServiceProvider extends BaseServiceProvider
 {

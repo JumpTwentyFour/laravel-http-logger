@@ -1,6 +1,6 @@
 <?php
 
-namespace Jumptwentyfour\LaravelHttpLogger\Contracts;
+namespace JumpTwentyFour\LaravelHttpLogger\Contracts;
 
 interface RequestLoggerContract
 {

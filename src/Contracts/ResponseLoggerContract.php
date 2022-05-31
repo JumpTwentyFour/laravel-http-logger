@@ -1,6 +1,6 @@
 <?php
 
-namespace Jumptwentyfour\LaravelHttpLogger\Contracts;
+namespace JumpTwentyFour\LaravelHttpLogger\Contracts;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;

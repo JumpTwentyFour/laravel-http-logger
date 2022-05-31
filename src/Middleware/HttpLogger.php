@@ -1,11 +1,11 @@
 <?php
 
-namespace Jumptwentyfour\LaravelHttpLogger\Middleware;
+namespace JumpTwentyFour\LaravelHttpLogger\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Jumptwentyfour\LaravelHttpLogger\Contracts\RequestLoggerContract;
-use Jumptwentyfour\LaravelHttpLogger\Contracts\ResponseLoggerContract;
+use JumpTwentyFour\LaravelHttpLogger\Contracts\RequestLoggerContract;
+use JumpTwentyFour\LaravelHttpLogger\Contracts\ResponseLoggerContract;
 
 class HttpLogger
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Jumptwentyfour\LaravelHttpLogger\Loggers;
+namespace JumpTwentyFour\LaravelHttpLogger\Loggers;
 
 use Illuminate\Http\Request;
 use Illuminate\Log\LogManager;
-use Jumptwentyfour\LaravelHttpLogger\Contracts\RequestLoggerContract;
+use JumpTwentyFour\LaravelHttpLogger\Contracts\RequestLoggerContract;
 
 class RequestLogger implements RequestLoggerContract
 {

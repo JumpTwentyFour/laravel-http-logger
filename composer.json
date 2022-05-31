@@ -2,7 +2,7 @@
     "name": "jumptwentyfour/laravel-http-logger",
     "description": "A logger middleware for HTTP requests and responses",
     "type": "library",
-    "version": "0.1.0",
+    "version": "0.1.2",
     "keywords": [
         "jumptwentyfour",
         "jump24",
@@ -11,7 +11,7 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Jumptwentyfour\\LaravelHttpLogger\\": "src/"
+            "JumpTwentyFour\\LaravelHttpLogger\\": "src/"
         }
     },
     "authors": [
