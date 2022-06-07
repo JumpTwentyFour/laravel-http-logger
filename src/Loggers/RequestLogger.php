@@ -28,7 +28,7 @@ class RequestLogger implements RequestLoggerContract
             'user' => $request->getUser(),
         ];
         $data = $this->filter($data);
-        $this->logManager->debug('Request: ' . json_encode($data));
+        $this->logManager->channel($channel)->debug('Request: ' . json_encode($data));
     }
 
 

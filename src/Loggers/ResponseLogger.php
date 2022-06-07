@@ -32,6 +32,6 @@ class ResponseLogger implements ResponseLoggerContract
 
         $data = $this->filter($data);
 
-        $this->logManager->debug('Response: ' . json_encode($data));
+        $this->logManager->channel($channel)->debug('Response: ' . json_encode($data));
     }
 }
