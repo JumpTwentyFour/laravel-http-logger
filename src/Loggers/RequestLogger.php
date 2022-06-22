@@ -21,15 +21,15 @@ class RequestLogger implements RequestLoggerContract
     public function __invoke(Request $request, string $channel): void
     {
         $data = [
-            'url' => $request->getRequestUri(),
+            'url' => $request->getUri(),
             'method' => $request->getMethod(),
             'headers' => $request->headers->all(),
             'body' => $request->getContent(),
             'user' => $request->getUser(),
         ];
+
         $data = $this->filter($data);
+
         $this->logManager->channel($channel)->debug('Request: ' . json_encode($data));
     }
-
-
 }

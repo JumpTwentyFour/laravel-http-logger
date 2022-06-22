@@ -22,7 +22,7 @@ class ResponseLogger implements ResponseLoggerContract
     public function __invoke(Request $request, Response $response, string $channel): void
     {
         $data = [
-            'url' => $request->getRequestUri(),
+            'url' => $request->getUri(),
             'method' => $request->getMethod(),
             'status' => $response->getStatusCode(),
             'headers' => $response->headers->all(),
