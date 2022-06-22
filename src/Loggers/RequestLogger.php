@@ -22,14 +22,15 @@ class RequestLogger implements RequestLoggerContract
     {
         $data = [
             'url' => $request->getRequestUri(),
+            'full_url' => $request->getUri(),
             'method' => $request->getMethod(),
             'headers' => $request->headers->all(),
             'body' => $request->getContent(),
             'user' => $request->getUser(),
         ];
+
         $data = $this->filter($data);
+
         $this->logManager->channel($channel)->debug('Request: ' . json_encode($data));
     }
-
-
 }
